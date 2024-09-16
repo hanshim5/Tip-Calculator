@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TipTimeTheme {
+            TipCalculatorTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     ) {
@@ -67,7 +67,7 @@ fun TipTimeLayout() {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = stringResource(R.string.tip_amount, "$0.00"),
+            text = stringResource(R.string.calculate_tip),
             modifier = Modifier
                 .padding(bottom = 16.dp, top = 40.dp)
                 .align(alignment = Alignment.Start)
@@ -111,7 +111,7 @@ private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
 @Preview(showBackground = true)
 @Composable
 fun TipTimeLayoutPreview() {
-    TipTimeTheme {
+    TipCalculatorTheme {
         TipTimeLayout()
     }
 }
